@@ -125,7 +125,7 @@ class WebCrawler:
             print("\nUsando o proxy: " + proxy)
 
         # Instantiathe the chromedriver
-        self.browser = webdriver.Chrome(chrome_options=chrome_options, executable_path=Path("driver/" 'chromedriver'))
+        self.browser = webdriver.Chrome(chrome_options=chrome_options, executable_path=Path("driver/" 'chromedriver.exe'))
 
         # Maximize the window
         self.browser.maximize_window()
