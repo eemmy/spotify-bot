@@ -35,18 +35,24 @@ class WebCrawler:
         sleep(randint(self.random_times[type][0], self.random_times[type][1]))
 
     # Gets the user accounts
-    def get_accounts(self):
-        # get the file path
-        xlsx_file = Path('files', 'contas.xlsx')
+    def get_accounts(self, e=''):
+        try:
+            # get the file path
+            xlsx_file = Path('files', 'contas'+e+'.xlsx')
 
-        # Load the openpyxl object
-        wb_obj = openpyxl.load_workbook(xlsx_file) 
+            # Load the openpyxl object
+            wb_obj = openpyxl.load_workbook(xlsx_file)
 
-        # Read the active sheet
-        sheet = wb_obj.active
+            # Read the active sheet
+            sheet = wb_obj.active
 
-        # Return the recovered accounts
-        return sheet
+            # Return the recovered accounts
+            return sheet
+        except:
+            print('contas'+e+'.xlsx')
+            print("exit")
+            # Exit app
+            exit()
 
     # Gets the musics list
     def get_musics(self):
