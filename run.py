@@ -66,7 +66,7 @@ i = 2
 def loop(e='', limit=30):
     threads = run(e, limit)
     
-    i=2
+    i = 2
 
     if e != '':
         i = int(e)+1
@@ -78,4 +78,4 @@ def loop(e='', limit=30):
             sleep(2)
 
 
-loop(limit)
+loop('', limit)
