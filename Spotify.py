@@ -153,7 +153,7 @@ class WebCrawler:
         self.click(self.browser.find_element_by_xpath("//a[@data-ga-action='log-in']"))
 
         # Waits a random time to load the page, and a time inside the page
-        sleep(20)
+        sleep(35)
         self.wait()
 
         # Send the user data to the email and password fields
@@ -164,7 +164,7 @@ class WebCrawler:
         self.click(self.browser.find_element_by_xpath("//button[@id='login-button']"))
 
         # Waits the page load
-        sleep(20)
+        sleep(35)
 
     # Search by a music
     def search_music(self, name, author):
@@ -183,6 +183,7 @@ class WebCrawler:
 
         # Waits a random time
         self.wait()
+        sleep(35)
 
         # Verifies if was multiple play buttons
         if type(self.browser.find_element_by_xpath("//button[@data-testid='play-button']")) is webdriver.remote.webelement.WebElement:
@@ -199,7 +200,7 @@ class WebCrawler:
     # Pause the script executation during music time
     def listen_music(self):
         # Waits music start
-        sleep(2)
+        sleep(6)
 
         # Infinite loop
         while True:
@@ -216,6 +217,7 @@ class WebCrawler:
 
         # Sleeps a random time before back to music
         self.wait("musics")
+        sleep(6)
 
     # Automate the target, using musics
     def run_music(self, email, password):
@@ -299,7 +301,7 @@ class WebCrawler:
             self.browser.get(playlist_link)
 
             # Pause to wait page loads
-            sleep(20)
+            sleep(35)
 
             # Loop to check if the playlist was liked
             for i in range(0, 1):
